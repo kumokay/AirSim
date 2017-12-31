@@ -1,3 +1,58 @@
+# How to Get Start with AirSim (for Windows User) 
+author: kumokay
+
+## My environment
+* windows 7
+* Visual Studio 2015 Update 3
+* Unreal engin 4.18 (takes 20GB space) 
+  - install Epic Game Laucher: https://www.unrealengine.com/download (Epicinstaller-7.0.0.msi)
+  - start the Epic Game Laucher, register and go inside, install Unreal engine
+* CMake 3.10.1 
+  - install CMake
+  - add "C:\Program Files\CMake\bin" to Environment variable "Path"
+
+
+## Build AirSim
+* make a new folder for AirSim
+* start VS2015 x64 Native Tools Command Prompt, and switch to that folder, install everything
+```
+git clone https://github.com/kumokay/AirSim.git
+cd AirSim
+build.cmd
+```
+
+Note: I use https://github.com/kumokay/AirSim.git with default branch "v1.1.6_fix_unicode" because 
+* v1.1.7 does not work on my laptop
+* Microsoft's v1.1.6 has two files with unicode character (which is fixed in master branch but not in any tags)
+
+So I forked and fixed it in this branch "v1.1.6_fix_unicode".
+
+
+
+## Setup Remote Control
+I did not do it
+
+## Setup Unreal Environment
+Just follow the steps mentioned in this readme below.
+
+A brief summary: 
+
+in VS2015 x64 Native Tools Command Prompt:
+
+```
+cd AirSim\Unreal\Environments\Blocks
+update_from_git.bat
+GenerateProjectFiles.bat
+```
+
+Now you can double click on "Blocks.sln" and start driving your car
+
+
+
+
+
+
+
 # Welcome to AirSim
 
 AirSim is a simulator for drones, cars and more built on Unreal Engine. It is open-source, cross platform and supports hardware-in-loop with popular flight controllers such as PX4 for physically and visually realistic simulations. It is developed as an Unreal plugin that can simply be dropped in to any Unreal environment you want.
