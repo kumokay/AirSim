@@ -66,6 +66,8 @@ IF NOT EXIST AirLib\deps\eigen3 (
     del eigen3.zip
 )
 IF NOT EXIST AirLib\deps\eigen3 goto :buildfailed
+REM // kumokay: remove unicode char in eigen3
+powershell -Command "(gc AirLib\deps\eigen3\Eigen\src\Core\arch\CUDA\Half.h) -replace '[^\x00-\x7F]', '' | Out-File AirLib\deps\eigen3\Eigen\src\Core\arch\CUDA\Half.h"
 
 ECHO Starting cmake...
 REM //---------- compile rpclib that we got from git submodule ----------
