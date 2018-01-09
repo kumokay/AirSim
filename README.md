@@ -47,6 +47,22 @@ GenerateProjectFiles.bat
 
 Now you can double click on "Blocks.sln" and start driving your car
 
+# How to run HelloDrone
+
+ref: https://github.com/Microsoft/AirSim/issues/175
+
+## start the server
+```
+cd AirSim\Unreal\Environments\Blocks
+run the project file
+click "Play" in the unreal project
+```
+
+## start the client
+```
+cd AirSim\HelloDrone\build\x64\Debug
+run HelloDrone.exe
+```
 
 
 
